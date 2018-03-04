@@ -1,7 +1,11 @@
 package com.example.mattr.myyearbook;
 
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Matt on 3/3/2018.
@@ -37,8 +41,11 @@ public class WeatherCards {
     static TextView decriptionFiveText;
     static ProgressBar progressBar;
 
-    static TextView[] dayArray = {dayOneText, dayTwoText, dayThreeText, dayFourText, dayFiveText};
-    static TextView[] date = {dateOneText, dateTwoText, dateThreeText, dateFourText, dateFiveText};
-    static TextView[] temp = {tempOneText, tempTwoText, tempThreeText, tempFourText, tempFiveText};
-    static TextView[] description = {decriptionOneText, decriptionTwoText, decriptionThreeText, decriptionFourText, decriptionFiveText};
+    static ImageView imageOne;
+    static ImageView imageTwo;
+    static ImageView imageThree;
+    static ImageView imageFour;
+    static ImageView imageFive;
+    static ImageView imageSix;
+
 }

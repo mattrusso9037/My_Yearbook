@@ -13,37 +13,55 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:baselineAligned="false"
             android:orientation="vertical">
 
+        <LinearLayout
+            android:id="@+id/top"
+            style="@style/linearlayout1"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
             <TextView
+                android:alpha=".8"
                 android:id="@+id/cityText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:textAlignment="center"
+                android:layout_marginTop="20dp"
                 android:textColor="#fff"
+                android:textAlignment="center"
                 android:textSize="48sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-            <LinearLayout
-                android:layout_width="match_parent"
 
-                android:layout_height="150dp"
+            <ImageView
+                android:id="@+id/imageViewOne"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="125dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="136dp"
-                android:alpha=".7"
-                android:background="#fff"
-                android:orientation="horizontal"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/topCard"
+                style="@style/linearlayout1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -54,6 +72,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:baselineAligned="false"
                     android:orientation="vertical">
 
                     <TextView
@@ -61,22 +80,24 @@
                         style="@style/weatherCardText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="0" />
 
                     <TextView
                         android:id="@+id/dateOneText"
 
                         style="@style/weatherCardText"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="0" />
+
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/layout3"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="0"
+                    android:baselineAligned="false"
                     android:orientation="vertical">
 
                     <TextView
@@ -84,28 +105,28 @@
                         style="@style/weatherCardText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_marginEnd="10dp" />
 
                     <TextView
                         android:id="@+id/descriptionOneText"
                         style="@style/weatherCardText"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_marginEnd="10dp" />
                 </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageViewSix"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+
+                    android:layout_weight="1" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-
-                android:layout_height="150dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
                 android:layout_marginTop="20dp"
-                android:alpha=".7"
-                android:background="#fff"
-                android:orientation="horizontal"
+                style="@style/linearlayout1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -116,22 +137,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:baselineAligned="false"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/dayTwoText"
                         style="@style/weatherCardText"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_height="wrap_content" />
 
                     <TextView
                         android:id="@+id/dateTwoText"
 
                         style="@style/weatherCardText"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -139,14 +159,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:baselineAligned="false"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/tempTwoText"
                         style="@style/weatherCardText"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_height="wrap_content" />
 
                     <TextView
                         android:id="@+id/descriptionTwoText"
@@ -154,21 +174,22 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
 
-                        android:layout_weight="1" />
+                        />
                 </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageViewTwo"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+
+                    android:layout_weight="1" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
 
-                android:layout_height="150dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
                 android:layout_marginTop="20dp"
-                android:alpha=".7"
-                android:background="#fff"
-                android:orientation="horizontal"
+                style="@style/linearlayout1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -179,22 +200,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:baselineAligned="false"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/dayThreeText"
                         style="@style/weatherCardText"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_height="wrap_content" />
 
                     <TextView
                         android:id="@+id/datethreeText"
 
                         style="@style/weatherCardText"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_height="wrap_content" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -202,14 +223,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:baselineAligned="false"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/tempThreeText"
                         style="@style/weatherCardText"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_height="wrap_content" />
 
                     <TextView
                         android:id="@+id/descriptionThreeText"
@@ -217,21 +238,21 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
 
-                        android:layout_weight="1" />
+                        />
                 </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageViewThree"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+
+                    android:layout_weight="1" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-
-                android:layout_height="150dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
                 android:layout_marginTop="20dp"
-                android:alpha=".7"
-                android:background="#fff"
-                android:orientation="horizontal"
+                style="@style/linearlayout1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -241,23 +262,21 @@
                     android:id="@+id/four"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/dayFourText"
                         style="@style/weatherCardText"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_height="wrap_content" />
 
                     <TextView
                         android:id="@+id/dateFourText"
 
                         style="@style/weatherCardText"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -283,18 +302,18 @@
                         android:layout_weight="1" />
                 </LinearLayout>
 
+                <ImageView
+                    android:id="@+id/imageViewFour"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+
+                    android:layout_weight="1" />
+
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-
-                android:layout_height="150dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
                 android:layout_marginTop="20dp"
-                android:alpha=".7"
-                android:background="#fff"
-                android:orientation="horizontal"
+                style="@style/linearlayout1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -305,22 +324,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:baselineAligned="false"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/dayFiveText"
                         style="@style/weatherCardText"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_height="wrap_content" />
 
                     <TextView
                         android:id="@+id/dateFiveText"
 
                         style="@style/weatherCardText"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -334,8 +352,7 @@
                         android:id="@+id/tempFiveText"
                         style="@style/weatherCardText"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_height="wrap_content" />
 
                     <TextView
                         android:id="@+id/descriptionFiveText"
@@ -343,9 +360,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
 
-                        android:layout_weight="1" />
+                        />
                 </LinearLayout>
 
+                <ImageView
+                    android:id="@+id/imageViewFive"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+
+                    android:layout_weight="1" />
             </LinearLayout>
 
         </LinearLayout>
@@ -366,11 +389,4 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <!--two-->
-
-
-    <!--three-->
-
-    <!--four-->
-    <!--five-->
 </android.support.constraint.ConstraintLayout>
