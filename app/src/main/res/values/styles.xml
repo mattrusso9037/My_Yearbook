@@ -24,4 +24,16 @@
     <style name="Progressbar.White" parent="AppTheme">
         <item name="colorControlActivated">#fff</item>
     </style>
+    <style name="linearlayout1">
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:alpha">.8</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">175dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+
+       <item name="android:baselineAligned">false</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
 </resources>

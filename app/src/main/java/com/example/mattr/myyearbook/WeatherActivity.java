@@ -1,20 +1,17 @@
 package com.example.mattr.myyearbook;
 
-import android.*;
-import android.Manifest;
+
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
-import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -25,22 +22,18 @@ import com.google.android.gms.location.LocationServices;
 
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 public class WeatherActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
 
 
 
     private final String tag = "Weather App";
-//
     private GoogleApiClient mGoogleApiClient;
     private LocationRequest mlocationRequest;
     private static final int PERMISSION_ACCESS_FINE_LOCATION = 1;
     private String lon;
     private String lat;
+    static Context context;
     static ImageView icon1;
     JSONObject data = null;
 
@@ -49,7 +42,9 @@ public class WeatherActivity extends AppCompatActivity implements GoogleApiClien
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
+        context = getApplicationContext();
         getSupportActionBar().hide();
+
         WeatherCards.cityText = findViewById(R.id.cityText);
 
         WeatherCards.dayOneText = findViewById(R.id.dayOneText);
@@ -76,9 +71,16 @@ public class WeatherActivity extends AppCompatActivity implements GoogleApiClien
         WeatherCards.tempFourText = findViewById(R.id.tempFourText);
         WeatherCards.tempFiveText = findViewById(R.id.tempFiveText);
 
+        WeatherCards.imageOne = findViewById(R.id.imageViewOne);
+        WeatherCards.imageTwo = findViewById(R.id.imageViewTwo);
+        WeatherCards.imageThree = findViewById(R.id.imageViewThree);
+        WeatherCards.imageFour = findViewById(R.id.imageViewFour);
+        WeatherCards.imageFive = findViewById(R.id.imageViewFive);
+        WeatherCards.imageSix = findViewById(R.id.imageViewSix);
+
+
         WeatherCards.progressBar = findViewById(R.id.progressBar);
 
-        LocationHandler locationHandler = new LocationHandler();
 
 
 
@@ -87,10 +89,6 @@ public class WeatherActivity extends AppCompatActivity implements GoogleApiClien
                 .addApi(LocationServices.API).
                         addConnectionCallbacks(this).
                         addOnConnectionFailedListener(this).build();
-
-
-
-
 
     }
 
@@ -140,8 +138,8 @@ public class WeatherActivity extends AppCompatActivity implements GoogleApiClien
 
         lon = String.valueOf(location.getLongitude());
         lat = String.valueOf(location.getLatitude());
-        //access API
 
+        //access API
         DownloadTask task = new DownloadTask();
 
         task.execute("http://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&appid=c68afd55e680aa59cf765d11d0ab60b5");
@@ -169,4 +167,8 @@ public class WeatherActivity extends AppCompatActivity implements GoogleApiClien
         Log.i(tag, "connection failed");
 
     }
+    public static Context getContext() {
+        return context;
+    }
+
 }
