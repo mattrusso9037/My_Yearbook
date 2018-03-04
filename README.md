@@ -3,3 +3,4 @@
 - handle location in separate class
 - implement custom webviewclient
 - handle webview history
+- exception handling
