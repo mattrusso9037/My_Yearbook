@@ -31,8 +31,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class WeatherActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
-    static TextView cityText;
-    static TextView forecast;
+
+
+
     private final String tag = "Weather App";
 //
     private GoogleApiClient mGoogleApiClient;
@@ -48,9 +49,35 @@ public class WeatherActivity extends AppCompatActivity implements GoogleApiClien
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
-        forecast = findViewById(R.id.forecast);
-        cityText = findViewById(R.id.cityText);
-        icon1 = findViewById(R.id.iconOne);
+        getSupportActionBar().hide();
+        WeatherCards.cityText = findViewById(R.id.cityText);
+
+        WeatherCards.dayOneText = findViewById(R.id.dayOneText);
+        WeatherCards.dayTwoText = findViewById(R.id.dayTwoText);
+        WeatherCards.dayThreeText = findViewById(R.id.dayThreeText);
+        WeatherCards.dayFourText = findViewById(R.id.dayFourText);
+        WeatherCards.dayFiveText = findViewById(R.id.dayFiveText);
+
+        WeatherCards.dateOneText = findViewById(R.id.dateOneText);
+        WeatherCards.dateTwoText = findViewById(R.id.dateTwoText);
+        WeatherCards.dateThreeText = findViewById(R.id.datethreeText);
+        WeatherCards.dateFourText = findViewById(R.id.dateFourText);
+        WeatherCards.dateFiveText = findViewById(R.id.dateFiveText);
+
+        WeatherCards.decriptionOneText = findViewById(R.id.descriptionOneText);
+        WeatherCards.decriptionTwoText = findViewById(R.id.descriptionTwoText);
+        WeatherCards.decriptionThreeText = findViewById(R.id.descriptionThreeText);
+        WeatherCards.decriptionFourText = findViewById(R.id.descriptionFourText);
+        WeatherCards.decriptionFiveText = findViewById(R.id.descriptionFiveText);
+
+        WeatherCards.tempOneText = findViewById(R.id.tempOneText);
+        WeatherCards.tempTwoText = findViewById(R.id.tempTwoText);
+        WeatherCards.tempThreeText = findViewById(R.id.tempThreeText);
+        WeatherCards.tempFourText = findViewById(R.id.tempFourText);
+        WeatherCards.tempFiveText = findViewById(R.id.tempFiveText);
+
+        WeatherCards.progressBar = findViewById(R.id.progressBar);
+
         LocationHandler locationHandler = new LocationHandler();
 
 
@@ -117,7 +144,7 @@ public class WeatherActivity extends AppCompatActivity implements GoogleApiClien
 
         DownloadTask task = new DownloadTask();
 
-        task.execute("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid=c68afd55e680aa59cf765d11d0ab60b5");
+        task.execute("http://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&appid=c68afd55e680aa59cf765d11d0ab60b5");
 
     }
 
