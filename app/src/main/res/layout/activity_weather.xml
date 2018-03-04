@@ -78,17 +78,15 @@
                     <TextView
                         android:id="@+id/dayOneText"
                         style="@style/weatherCardText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
                     <TextView
                         android:id="@+id/dateOneText"
 
                         style="@style/weatherCardText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
 
                 </LinearLayout>
 
@@ -96,7 +94,7 @@
                     android:id="@+id/layout3"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="0"
+                    android:layout_weight="1"
                     android:baselineAligned="false"
                     android:orientation="vertical">
 
@@ -105,21 +103,19 @@
                         style="@style/weatherCardText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp" />
+                     />
 
                     <TextView
                         android:id="@+id/descriptionOneText"
                         style="@style/weatherCardText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/imageViewSix"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-
                     android:layout_weight="1" />
 
             </LinearLayout>
@@ -143,12 +139,11 @@
                     <TextView
                         android:id="@+id/dayTwoText"
                         style="@style/weatherCardText"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
                     <TextView
                         android:id="@+id/dateTwoText"
-
                         style="@style/weatherCardText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
