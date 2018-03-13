@@ -3,20 +3,22 @@ package com.example.mattr.myyearbook;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.view.View;
+import android.widget.ProgressBar;
+
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import static com.example.mattr.myyearbook.WeatherActivity.progressBar;
 
 
 /**
  * Created by Matt on 3/2/2018.
  */
 
-public class DownloadTask extends AsyncTask<String, Void, String> {
+public class DownloadTask extends AsyncTask<String, Integer, String> {
 JSONParser jsonParser = new JSONParser();
-
 
     @Override
     protected String doInBackground(String...urls) {
@@ -56,7 +58,7 @@ JSONParser jsonParser = new JSONParser();
     @Override
     protected void onPreExecute() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            WeatherCards.progressBar.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.VISIBLE);
         }
     }
     @Override
@@ -64,6 +66,9 @@ JSONParser jsonParser = new JSONParser();
         //result will be string of json data
      super.onPostExecute(result);
     jsonParser.parseData(result, WeatherActivity.getContext());
+        progressBar.setVisibility(View.INVISIBLE);
+
+
 
     }
 

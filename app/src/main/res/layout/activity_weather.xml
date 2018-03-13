@@ -1,372 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pattern2"
-    tools:context="com.example.mattr.myyearbook.WeatherActivity">
-
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:baselineAligned="false"
-            android:orientation="vertical">
-
-        <LinearLayout
-            android:id="@+id/top"
-            style="@style/linearlayout1"
-            android:layout_marginTop="10dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:alpha=".8"
-                android:id="@+id/cityText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:textColor="#fff"
-                android:textAlignment="center"
-                android:textSize="48sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/imageViewOne"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginBottom="125dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="10dp" />
-        </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/topCard"
-                style="@style/linearlayout1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <LinearLayout
-                    android:id="@+id/layoutTwo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:baselineAligned="false"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/dayOneText"
-                        style="@style/weatherCardText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:id="@+id/dateOneText"
-
-                        style="@style/weatherCardText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layout3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:baselineAligned="false"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tempOneText"
-                        style="@style/weatherCardText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                     />
-
-                    <TextView
-                        android:id="@+id/descriptionOneText"
-                        style="@style/weatherCardText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/imageViewSix"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_weight="1" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_marginTop="20dp"
-                style="@style/linearlayout1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <LinearLayout
-                    android:id="@+id/layout4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:baselineAligned="false"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/dayTwoText"
-                        style="@style/weatherCardText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:id="@+id/dateTwoText"
-                        style="@style/weatherCardText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layout2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:baselineAligned="false"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tempTwoText"
-                        style="@style/weatherCardText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:id="@+id/descriptionTwoText"
-                        style="@style/weatherCardText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-
-                        />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/imageViewTwo"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-
-                    android:layout_weight="1" />
-
-            </LinearLayout>
-
-            <LinearLayout
-
-                android:layout_marginTop="20dp"
-                style="@style/linearlayout1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <LinearLayout
-                    android:id="@+id/three"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:baselineAligned="false"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/dayThreeText"
-                        style="@style/weatherCardText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:id="@+id/datethreeText"
-
-                        style="@style/weatherCardText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/three2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:baselineAligned="false"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tempThreeText"
-                        style="@style/weatherCardText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:id="@+id/descriptionThreeText"
-                        style="@style/weatherCardText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-
-                        />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/imageViewThree"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-
-                    android:layout_weight="1" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_marginTop="20dp"
-                style="@style/linearlayout1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <LinearLayout
-                    android:id="@+id/four"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/dayFourText"
-                        style="@style/weatherCardText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:id="@+id/dateFourText"
-
-                        style="@style/weatherCardText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/four2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tempFourText"
-                        style="@style/weatherCardText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0" />
-
-                    <TextView
-                        android:id="@+id/descriptionFourText"
-                        style="@style/weatherCardText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/imageViewFour"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-
-                    android:layout_weight="1" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_marginTop="20dp"
-                style="@style/linearlayout1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <LinearLayout
-                    android:id="@+id/five"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:baselineAligned="false"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/dayFiveText"
-                        style="@style/weatherCardText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:id="@+id/dateFiveText"
-
-                        style="@style/weatherCardText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/five2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tempFiveText"
-                        style="@style/weatherCardText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:id="@+id/descriptionFiveText"
-                        style="@style/weatherCardText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-
-                        />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/imageViewFive"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-
-                    android:layout_weight="1" />
-            </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
+    android:background="@drawable/pattern2">
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -376,11 +13,35 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="124dp"
+        android:theme="@style/Progressbar.White"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        android:theme="@style/Progressbar.White"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cityText">
 
+
+    </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/cityText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="40sp"
+        android:textColor="#fff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
