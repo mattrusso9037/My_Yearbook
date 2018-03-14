@@ -10,8 +10,11 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -20,12 +23,11 @@ import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 
-import org.json.JSONObject;
+import java.util.ArrayList;
+import java.util.List;
 
 
-public class WeatherActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
-
-
+public class WeatherActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener, ListItemClickListener {
 
     private final String tag = "Weather App";
     private GoogleApiClient mGoogleApiClient;
@@ -34,56 +36,35 @@ public class WeatherActivity extends AppCompatActivity implements GoogleApiClien
     private String lon;
     private String lat;
     static Context context;
-    static ImageView icon1;
-    JSONObject data = null;
-
+    static TextView cityText;
+    static ProgressBar progressBar;
+    private RecyclerView recyclerView;
+    private MyAdapter adapter;
+    private LinearLayoutManager layoutManager;
+    static List<Weather> weatherList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
-        context = getApplicationContext();
         getSupportActionBar().hide();
 
-        WeatherCards.cityText = findViewById(R.id.cityText);
+        progressBar = findViewById(R.id.progressBar);
+        cityText = findViewById(R.id.cityText);
 
-        WeatherCards.dayOneText = findViewById(R.id.dayOneText);
-        WeatherCards.dayTwoText = findViewById(R.id.dayTwoText);
-        WeatherCards.dayThreeText = findViewById(R.id.dayThreeText);
-        WeatherCards.dayFourText = findViewById(R.id.dayFourText);
-        WeatherCards.dayFiveText = findViewById(R.id.dayFiveText);
+        context = getApplicationContext();
 
-        WeatherCards.dateOneText = findViewById(R.id.dateOneText);
-        WeatherCards.dateTwoText = findViewById(R.id.dateTwoText);
-        WeatherCards.dateThreeText = findViewById(R.id.datethreeText);
-        WeatherCards.dateFourText = findViewById(R.id.dateFourText);
-        WeatherCards.dateFiveText = findViewById(R.id.dateFiveText);
+        recyclerView = findViewById(R.id.my_recycler_view);
+        recyclerView.setHasFixedSize(true);
 
-        WeatherCards.decriptionOneText = findViewById(R.id.descriptionOneText);
-        WeatherCards.decriptionTwoText = findViewById(R.id.descriptionTwoText);
-        WeatherCards.decriptionThreeText = findViewById(R.id.descriptionThreeText);
-        WeatherCards.decriptionFourText = findViewById(R.id.descriptionFourText);
-        WeatherCards.decriptionFiveText = findViewById(R.id.descriptionFiveText);
+        layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
 
-        WeatherCards.tempOneText = findViewById(R.id.tempOneText);
-        WeatherCards.tempTwoText = findViewById(R.id.tempTwoText);
-        WeatherCards.tempThreeText = findViewById(R.id.tempThreeText);
-        WeatherCards.tempFourText = findViewById(R.id.tempFourText);
-        WeatherCards.tempFiveText = findViewById(R.id.tempFiveText);
+        adapter = new MyAdapter(weatherList, this);
+        recyclerView.setAdapter(adapter);
 
-        WeatherCards.imageOne = findViewById(R.id.imageViewOne);
-        WeatherCards.imageTwo = findViewById(R.id.imageViewTwo);
-        WeatherCards.imageThree = findViewById(R.id.imageViewThree);
-        WeatherCards.imageFour = findViewById(R.id.imageViewFour);
-        WeatherCards.imageFive = findViewById(R.id.imageViewFive);
-        WeatherCards.imageSix = findViewById(R.id.imageViewSix);
-
-
-        WeatherCards.progressBar = findViewById(R.id.progressBar);
-
-
-
-
+            adapter.clear();
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addApi(LocationServices.API).
@@ -118,7 +99,6 @@ public class WeatherActivity extends AppCompatActivity implements GoogleApiClien
         mlocationRequest = LocationRequest.create();
         mlocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         mlocationRequest.setInterval(300000);
-
 
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[] { android.Manifest.permission.ACCESS_FINE_LOCATION },
@@ -155,6 +135,7 @@ public class WeatherActivity extends AppCompatActivity implements GoogleApiClien
     protected void onStop() {
         super.onStop();
         mGoogleApiClient.disconnect();
+
     }
 
     @Override
@@ -170,5 +151,15 @@ public class WeatherActivity extends AppCompatActivity implements GoogleApiClien
     public static Context getContext() {
         return context;
     }
+    Toast toast;
+    @Override
+    public void onListItemClick(int clickedItemIndex) {
+//        if (toast != null){
+//            toast.cancel();
+//        }
+//        toast.makeText(this, String.valueOf(clickedItemIndex), Toast.LENGTH_SHORT).show();
+
+    }
+
 
 }
